@@ -485,14 +485,6 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 219639849}
-    - target: {fileID: 1926504876, guid: eb0f0404a8ccac54582a2eb751854913, type: 3}
-      propertyPath: dashSpeedMultiplier
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1926504876, guid: eb0f0404a8ccac54582a2eb751854913, type: 3}
-      propertyPath: maxDashTime
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4828405032434630204, guid: eb0f0404a8ccac54582a2eb751854913,
         type: 3}
       propertyPath: m_Name
