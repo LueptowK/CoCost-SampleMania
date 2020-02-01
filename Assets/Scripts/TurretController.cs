@@ -20,7 +20,8 @@ public class TurretController : EnemyController
                 Debug.Log("Fired!!!");
             }
         }
-        
+
+        repairIndicator.transform.LookAt(cam);
     }
 
 }
