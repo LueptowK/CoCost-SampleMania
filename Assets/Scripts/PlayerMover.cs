@@ -14,7 +14,12 @@ public class PlayerMover : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] float repairRate;
     public float RepairRate { get => repairRate; }
+    [SerializeField] float dashSpeedMultiplier;
+    public float DashSpeedMultiplier { get => dashSpeedMultiplier; }
+    [SerializeField] float maxDashTime;
+    public float MaxDashTime { get => maxDashTime; }
     [SerializeField] private ThirdPersonCharacter characterController;
+    public ThirdPersonCharacter CharacterController { get => characterController; }
     private CollisionFlags collisionFlags;
     private bool dead;
     private PlayerState currentState;
@@ -43,7 +48,13 @@ public class PlayerMover : MonoBehaviour
         }
     }
 
-
+    private void LateUpdate()
+    {
+        if (!dead)
+        {
+            currentState.LateUpdate();
+        }
+    }
 
     void Update()
     {
