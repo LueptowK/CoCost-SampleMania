@@ -49,14 +49,12 @@ public class EnemyController : MonoBehaviour
 
     protected virtual void Fire()
     {
-        Vector3 lookDirection = new Vector3(1, 0, 0);
         if (fireTime <= 0){
             fireTime = startFireTime;
-            GameObject projectileObject = Instantiate(projectilePrefab, rb.position + Vector3.up * 0.5f, Quaternion.identity);
-
+            GameObject projectileObject = Instantiate(projectilePrefab, rb.position + new Vector3(0f, 1f, 0f), tf.rotation);
+            projectileObject.SetActive(true);
             Projectile projectile = projectileObject.GetComponent<Projectile>();
-            projectile.Fire(lookDirection, 300.0f);
-            Debug.Log("Fired:)");
+            projectile.Fire(projectileObject.GetComponent<Transform>().forward, 10.0f);
         }
     }
 }

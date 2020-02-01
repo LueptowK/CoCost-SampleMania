@@ -8,8 +8,6 @@ public class TurretController : EnemyController
     protected override void Update()
     {
         fireTime -= Time.deltaTime;
-        //transform.LookAt(target);
-        //Fire();
         if (isRepaired == true)
         {
             repairTime += Time.deltaTime;
@@ -17,7 +15,6 @@ public class TurretController : EnemyController
             {
                 transform.LookAt(target);
                 Fire();
-                Debug.Log("Fired!!!");
             }
         }
 
