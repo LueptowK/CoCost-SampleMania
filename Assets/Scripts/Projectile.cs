@@ -34,7 +34,9 @@ public class Projectile : MonoBehaviour
         Transform e = other.GetComponent<Transform>();
         if (e == target)
         {
+            other.gameObject.GetComponent<HealthController>().ReduceHealth();
             Destroy(gameObject);
+
         }
     }
 }
