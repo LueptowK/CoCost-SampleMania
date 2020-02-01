@@ -7,8 +7,10 @@ public class EnemyController : MonoBehaviour
 {
     protected Rigidbody rb;
     protected Transform tf;
-    [SerializeField] protected Transform target;
-    [SerializeField] protected Transform cam;
+    protected Transform target;
+    public Transform Target {set => target = value; }
+    protected Transform cam;
+    public Transform Cam { set => cam = value; }
     protected bool isRepaired = false;
     protected float maxRepairAmount = 100;
     protected float repairAmount;
