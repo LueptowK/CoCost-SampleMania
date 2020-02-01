@@ -16,6 +16,14 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		[SerializeField] float m_AnimSpeedMultiplier = 1f;
 		[SerializeField] float m_GroundCheckDistance = 0.1f;
 
+        public Vector3 velocity
+        {
+            get
+            {
+                return m_Rigidbody.velocity;
+            }
+        }
+
 		Rigidbody m_Rigidbody;
 		Animator m_Animator;
 		bool m_IsGrounded;
