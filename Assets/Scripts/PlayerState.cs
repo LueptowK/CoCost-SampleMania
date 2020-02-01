@@ -25,6 +25,11 @@ public abstract class PlayerState
     {
     }
 
+    public virtual void LateUpdate()
+    {
+
+    }
+
     public virtual void Enter()
     {
 
