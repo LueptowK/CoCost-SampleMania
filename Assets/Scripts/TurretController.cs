@@ -16,7 +16,8 @@ public class TurretController : EnemyController
                 transform.LookAt(target);
             }
         }
-        
+
+        repairIndicator.transform.LookAt(cam);
     }
 
 }

@@ -47,9 +47,9 @@ public class RepairingState : PlayerState
     public override void Enter()
     {
         Collider target = GetRepairTarget();
-        repairTarget = target.gameObject.GetComponent<EnemyController>();
-        if (repairTarget != null)
+        if (target != null)
         {
+            repairTarget = target.gameObject.GetComponent<EnemyController>();
             repairTarget.Repair(playerMover.RepairRate);
         }
     }
