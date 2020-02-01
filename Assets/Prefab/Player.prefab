@@ -942,6 +942,7 @@ GameObject:
   - component: {fileID: 4828405032421750332}
   - component: {fileID: 4828405032423888218}
   - component: {fileID: 4828405032423798142}
+  - component: {fileID: 1926504876}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1022,7 +1023,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4828405032434630204}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 521b611700410be45810047f0a74e899, type: 3}
   m_Name: 
@@ -1047,6 +1048,22 @@ MonoBehaviour:
   m_MoveSpeedMultiplier: 1
   m_AnimSpeedMultiplier: 1
   m_GroundCheckDistance: 0.3
+--- !u!114 &1926504876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4828405032434630204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5dcefdba14b7548ba88db3b40ecc42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 20
+  stickToGroundForce: 0
+  characterController: {fileID: 4828405032423798142}
+  cam: {fileID: 0}
 --- !u!1 &4828405032434630488
 GameObject:
   m_ObjectHideFlags: 0

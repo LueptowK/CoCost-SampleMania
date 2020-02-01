@@ -78,7 +78,7 @@ public class PlayerMover : MonoBehaviour
 
     public void Move(Vector3 movement, bool crouch, bool jump)
     {
-        characterController.Move(movement * Time.fixedDeltaTime, crouch, jump);
+        characterController.Move(movement * speed, crouch, jump);
     }
 
     public void PlayLandSound()

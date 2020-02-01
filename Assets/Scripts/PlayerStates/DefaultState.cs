@@ -42,24 +42,22 @@ public class DefaultState : PlayerState
         else
         {
             // we use world-relative directions in the case of no main camera
-            move = v * Vector3.forward + h * Vector3.right;
+            move = (v * Vector3.forward + h * Vector3.right);
         }
 
         // pass all parameters to the character control script
         playerMover.Move(move, crouch, false);
 
+        if (Input.GetButtonDown("Fire1"))
+        {
+            return new RepairingState(playerMover);
+        }
 
-        //move = GetStandardDesiredMove(playerMover.speed);
-        //move.y = -playerMover.stickToGroundForce;
-
-
-        MouseLookFixedUpdate();
         return null;
     }
 
     public override void Update()
     {
-        MouseLookUpdate();
         move.y = 0f;
 
         //grounded = playerMover.isGrounded();

@@ -18,13 +18,11 @@ public abstract class PlayerState
 
     public virtual PlayerState FixedUpdate()
     {
-        MouseLookFixedUpdate();
         return null;
     }
 
     public virtual void Update()
     {
-        MouseLookUpdate();
     }
 
     public virtual void Enter()
@@ -35,16 +33,6 @@ public abstract class PlayerState
     public virtual void Exit()
     {
 
-    }
-
-    protected virtual void MouseLookFixedUpdate()
-    {
-
-    }
-
-    protected virtual void MouseLookUpdate()
-    {
-        RotateView();
     }
 
     private void RotateView()
@@ -64,20 +52,4 @@ public abstract class PlayerState
         }
         return input;
     }
-
-    //public virtual Vector3 GetStandardDesiredMove(float speed)
-    //{
-    //    Vector3 move = GetInput();
-
-    //    // transfer from world coordinates to player coordinates
-    //    Vector3 desiredMove = cam.transform.forward * move.y + cam.transform.right * move.x;
-
-    //    RaycastHit hitInfo = playerMover.GetSurfaceNormal();
-
-    //    desiredMove = Vector3.ProjectOnPlane(desiredMove, hitInfo.normal).normalized;
-
-    //    move.x = desiredMove.x * speed;
-    //    move.z = desiredMove.z * speed;
-    //    return move;
-    //}
 }
