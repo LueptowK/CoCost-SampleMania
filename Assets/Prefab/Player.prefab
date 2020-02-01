@@ -1063,8 +1063,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 20
   repairRate: 1
-  dashSpeedMultiplier: 0
-  maxDashTime: 0
+  dashSpeedMultiplier: 2
+  maxDashTime: 1
   characterController: {fileID: 4828405032423798142}
   cam: {fileID: 0}
 --- !u!114 &1585842869
