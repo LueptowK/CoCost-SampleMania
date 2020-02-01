@@ -52,4 +52,22 @@ public abstract class PlayerState
         }
         return input;
     }
+
+    protected virtual Collider GetRepairTarget()
+    {
+        Collider[] colliders = Physics.OverlapSphere(
+            playerMover.transform.position + playerMover.transform.forward * 0.5f,
+            0.5f,
+            LayerMask.GetMask("Enemy"));
+        if (colliders.Length > 1)
+        {
+            //find closest
+        }
+        else if (colliders.Length == 1)
+        {
+            return colliders[0];
+        }
+
+        return null;
+    }
 }

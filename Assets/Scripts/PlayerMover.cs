@@ -11,8 +11,9 @@ using UnityStandardAssets.Characters.ThirdPerson;
 public class PlayerMover : MonoBehaviour
 {
     bool paused;
-    public float speed;
-    public float stickToGroundForce;
+    [SerializeField] private float speed;
+    [SerializeField] float repairRate;
+    public float RepairRate { get => repairRate; }
     [SerializeField] private ThirdPersonCharacter characterController;
     private CollisionFlags collisionFlags;
     private bool dead;
