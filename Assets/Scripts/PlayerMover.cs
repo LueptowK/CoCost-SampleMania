@@ -6,27 +6,23 @@ using UnityEngine.SceneManagement;
 using UnityEngine.Events;
 using UnityStandardAssets.Characters.FirstPerson;
 using UnityStandardAssets.CrossPlatformInput;
+using UnityStandardAssets.Characters.ThirdPerson;
 
 public class PlayerMover : MonoBehaviour
 {
     bool paused;
     public float speed;
     public float stickToGroundForce;
-    private CharacterController characterController;
+    [SerializeField] private ThirdPersonCharacter characterController;
     private CollisionFlags collisionFlags;
-    private Camera playerCamera;
     private bool dead;
     private PlayerState currentState;
-    [SerializeField] private MouseLook mouseLook;
-    public MouseLook MouseLook
-    {
-        get { return mouseLook; }
-    }
+    [SerializeField] public Camera cam;
 
     // Use this for initialization
     void Start()
     {
-        MouseLook.Init(transform, playerCamera.transform);
+        currentState = new DefaultState(this);
     }
 
 
@@ -80,9 +76,9 @@ public class PlayerMover : MonoBehaviour
 
 
 
-    public void Move(Vector3 movement)
+    public void Move(Vector3 movement, bool crouch, bool jump)
     {
-        collisionFlags = characterController.Move(movement * Time.fixedDeltaTime);
+        characterController.Move(movement * Time.fixedDeltaTime, crouch, jump);
     }
 
     public void PlayLandSound()
@@ -90,19 +86,19 @@ public class PlayerMover : MonoBehaviour
 
     }
 
-    public RaycastHit GetSurfaceNormal()
-    {
-        // get a normal for the surface that is being touched to move along it
-        RaycastHit hitInfo;
-        Physics.SphereCast(transform.position, characterController.radius, Vector3.down, out hitInfo,
-            characterController.height / 2f, Physics.AllLayers, QueryTriggerInteraction.Ignore);
-        return hitInfo;
-    }
+    //public RaycastHit GetSurfaceNormal()
+    //{
+    //    // get a normal for the surface that is being touched to move along it
+    //    RaycastHit hitInfo;
+    //    Physics.SphereCast(transform.position, characterController.radius, Vector3.down, out hitInfo,
+    //        characterController.height / 2f, Physics.AllLayers, QueryTriggerInteraction.Ignore);
+    //    return hitInfo;
+    //}
 
-    public bool isGrounded()
-    {
-        return characterController.isGrounded;
-    }
+    //public bool isGrounded()
+    //{
+    //    return characterController.isGrounded;
+    //}
 
     public void Die()
     {
