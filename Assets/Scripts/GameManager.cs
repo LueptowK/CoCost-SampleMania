@@ -36,7 +36,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Quit"))
+        if (Input.GetButtonDown("Cancel"))
         {
             SceneManager.LoadScene(0);
         }
