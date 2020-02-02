@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class HealthController : MonoBehaviour
 {
-    [SerializeField] protected float currentHealth = 3;
+    public float currentHealth = 3;
     [SerializeField] protected GameObject[] healthImages;
     bool win;
 
