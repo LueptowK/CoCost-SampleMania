@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 3275912902034862909}
   - component: {fileID: 7497602375879858208}
   - component: {fileID: 7497602375879858211}
-  - component: {fileID: 7497602375879858210}
   - component: {fileID: 878326748830626557}
+  - component: {fileID: 3903132087221916865}
   m_Layer: 9
   m_Name: NewTurret
   m_TagString: Enemy
@@ -71,20 +71,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!136 &7497602375879858210
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1958283764752630062}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 2
-  m_Height: 7
-  m_Direction: 1
-  m_Center: {x: 0, y: 3.5, z: 0}
 --- !u!95 &878326748830626557
 Animator:
   serializedVersion: 3
@@ -104,6 +90,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!65 &3903132087221916865
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1958283764752630062}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.3, y: 6.42, z: 2.01}
+  m_Center: {x: 0, y: 3, z: 0}
 --- !u!1 &3069702551249391914
 GameObject:
   m_ObjectHideFlags: 0
@@ -525,12 +524,12 @@ PrefabInstance:
     - target: {fileID: 7105391466730980857, guid: 2401ed829eded6545976515374a0422b,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7105391466730980857, guid: 2401ed829eded6545976515374a0422b,
         type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2401ed829eded6545976515374a0422b, type: 3}
