@@ -24,6 +24,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] protected float repairTimeBeforeDecrement;
     [SerializeField] protected GameObject projectilePrefab;
     [SerializeField] protected Image repairIndicator;
+    [SerializeField] protected Animator anim;
     protected float repairTimeout;
 
     // Start is called before the first frame update
@@ -67,6 +68,7 @@ public class EnemyController : MonoBehaviour
             isRepaired = true;
             repairIndicator.color = Color.red;
             gameManager.enemyRepaired(gameObject);
+            anim.Play("Repair");
         }
         return isRepaired;
     }

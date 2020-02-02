@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7497602375879858208}
   - component: {fileID: 7497602375879858211}
   - component: {fileID: 7497602375879858210}
+  - component: {fileID: 878326748830626557}
   m_Layer: 9
   m_Name: NewTurret
   m_TagString: Enemy
@@ -53,6 +54,7 @@ MonoBehaviour:
   repairTimeBeforeDecrement: 1
   projectilePrefab: {fileID: 763287878170526165}
   repairIndicator: {fileID: 7497602376894658034}
+  anim: {fileID: 878326748830626557}
 --- !u!54 &7497602375879858211
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -83,6 +85,25 @@ CapsuleCollider:
   m_Height: 7
   m_Direction: 1
   m_Center: {x: 0, y: 3.5, z: 0}
+--- !u!95 &878326748830626557
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1958283764752630062}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4a780fca6a89ad049bb6fc0741003c58, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &3069702551249391914
 GameObject:
   m_ObjectHideFlags: 0
