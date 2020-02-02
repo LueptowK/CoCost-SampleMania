@@ -35,6 +35,14 @@ public class HealthController : MonoBehaviour
         }
     }
 
+    public void IncreaseHealth()
+    {
+        if(currentHealth < 3)
+        {
+            currentHealth++;
+        }
+    }
+
     public void Win()
     {
         win = true;
