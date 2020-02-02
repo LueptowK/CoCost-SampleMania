@@ -79,7 +79,7 @@ public class EnemyController : MonoBehaviour
             projectileObject.SetActive(true);
             Projectile projectile = projectileObject.GetComponent<Projectile>();
             projectile.Target = target;
-            projectile.Fire(projectileObject.GetComponent<Transform>().forward, 10.0f);
+            projectile.Fire(tf.forward, 10.0f);
         }
     }
 }

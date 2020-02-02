@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HealthController : MonoBehaviour
 {
     [SerializeField] protected float currentHealth = 3;
+    [SerializeField] protected GameObject[] healthImages;
     bool win;
 
     // Start is called before the first frame update
@@ -31,7 +33,17 @@ public class HealthController : MonoBehaviour
         }
         else
         {
+            currentHealth = 0;
             gameObject.GetComponent<PlayerMover>().Die();
+        }
+        DisplayHealth();
+    }
+
+    void DisplayHealth()
+    {
+        for (int i = 0; i < healthImages.Length; i++)
+        {
+            healthImages[i].SetActive(i < currentHealth);
         }
     }
 
@@ -40,6 +52,7 @@ public class HealthController : MonoBehaviour
         if(currentHealth < 3)
         {
             currentHealth++;
+            DisplayHealth();
         }
     }
 
