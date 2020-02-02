@@ -6,7 +6,10 @@ public class HealthCollectible : MonoBehaviour
 {
     void OnTriggerEnter(Collider other)
     {
-        other.GetComponent<HealthController>().IncreaseHealth();
-        Destroy(gameObject);
+        if (other.GetComponent<HealthController>().currentHealth < 3)
+        {
+            other.GetComponent<HealthController>().IncreaseHealth();
+            Destroy(gameObject);
+        }
     }
 }
