@@ -42,7 +42,7 @@ public class Projectile : MonoBehaviour
             Destroy(gameObject);
 
         }
-        if(collisionNumber >= 1)
+        if(collisionNumber >= 1 && other.gameObject.layer != LayerMask.NameToLayer("Enemy"))
         {
             Destroy(gameObject);
         }

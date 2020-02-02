@@ -69,7 +69,8 @@ public abstract class PlayerState
             Collider closest = null;
             foreach(Collider collider in colliders)
             {
-                if (!collider.gameObject.GetComponent<EnemyController>().Repaired)
+                EnemyController enemy = collider.gameObject.GetComponent<EnemyController>();
+                if (enemy != null && !enemy.Repaired)
                 {
                     if (closest == null)
                     {
