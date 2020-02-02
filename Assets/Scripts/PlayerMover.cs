@@ -23,7 +23,11 @@ public class PlayerMover : MonoBehaviour
     private CollisionFlags collisionFlags;
     private bool dead;
     private PlayerState currentState;
+    [SerializeField] private Rigidbody rb;
+    public Rigidbody Rb { get => rb; }
     [SerializeField] public Camera cam;
+    [SerializeField] Animator anim;
+    public Animator Anim { get => anim; }
 
     // Use this for initialization
     void Start()

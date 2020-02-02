@@ -9,10 +9,7 @@ public class DefaultState : PlayerState
 {
     PlayerMover playerMover;
     Vector3 move;
-    bool jumping;
-    bool charging;
-    bool grounded;
-    bool dashing;
+    bool isWalking;
     float dashCost;
     Transform cam;
     Vector3 camForward;
@@ -43,6 +40,19 @@ public class DefaultState : PlayerState
         {
             // we use world-relative directions in the case of no main camera
             move = (v * Vector3.forward + h * Vector3.right);
+        }
+
+        if (move != Vector3.zero && 
+            ((playerMover.Anim.GetCurrentAnimatorStateInfo(0).IsName("Walking") && playerMover.Anim.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f) ||
+            !isWalking))
+        {
+            playerMover.Anim.Play("Walking", -1, 0f);
+            isWalking = true;
+        }
+        if (move == Vector3.zero && isWalking)
+        {
+            playerMover.Anim.Play("Idle");
+            isWalking = false;
         }
 
         // pass all parameters to the character control script
