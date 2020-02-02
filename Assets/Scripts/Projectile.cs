@@ -8,12 +8,15 @@ public class Projectile : MonoBehaviour
     Rigidbody rb;
     Transform target;
     public Transform Target { set => target = value; }
+    float collisionNumber;
+
 
     // Start is called before the first frame update
     void Awake()
     {
         tf = GetComponent<Transform>();
         rb = GetComponent<Rigidbody>();
+        collisionNumber = 0;
     }
 
     // Update is called once per frame
@@ -39,5 +42,10 @@ public class Projectile : MonoBehaviour
             Destroy(gameObject);
 
         }
+        if(collisionNumber >= 1)
+        {
+            Destroy(gameObject);
+        }
+        collisionNumber++;
     }
 }
