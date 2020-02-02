@@ -77,7 +77,7 @@ public class EnemyController : MonoBehaviour
     {
         if (fireTime <= 0){
             fireTime = startFireTime;
-            GameObject projectileObject = Instantiate(projectilePrefab, rb.position + new Vector3(0f, 1f, 0f), tf.rotation);
+            GameObject projectileObject = Instantiate(projectilePrefab, rb.position + new Vector3(0f, 1.3f, 0f), tf.rotation);
             projectileObject.SetActive(true);
             Projectile projectile = projectileObject.GetComponent<Projectile>();
             projectile.Target = target;
