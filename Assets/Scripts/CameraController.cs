@@ -16,6 +16,7 @@ public class CameraController : MonoBehaviour
     {
         cam.LookAt(player);
         Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         offset = new Vector3(player.position.x, player.position.y + height, player.position.z + distance);
     }
     

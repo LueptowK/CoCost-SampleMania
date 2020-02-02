@@ -1,24 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!95 &4316570522089313949
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5243992149149683602}
-  m_Enabled: 0
-  m_Avatar: {fileID: 9000000, guid: 45ae1fe9d1ddca346933448a2ce8d961, type: 3}
-  m_Controller: {fileID: 9100000, guid: 084f3bea90a3cab4eb723075ed7d605b, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &4316570523951544464
 GameObject:
   m_ObjectHideFlags: 0
@@ -69,6 +50,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 3
+  healthImages:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &4316570523951544458
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -81,7 +66,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a5dcefdba14b7548ba88db3b40ecc42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 4
   repairRate: 1
   dashSpeedMultiplier: 2
   maxDashTime: 1
@@ -158,6 +143,25 @@ MonoBehaviour:
   m_MoveSpeedMultiplier: 1
   m_AnimSpeedMultiplier: 1
   m_GroundCheckDistance: 0.3
+--- !u!95 &4316570522089313949
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5243992149149683602}
+  m_Enabled: 0
+  m_Avatar: {fileID: 9000000, guid: 45ae1fe9d1ddca346933448a2ce8d961, type: 3}
+  m_Controller: {fileID: 9100000, guid: 084f3bea90a3cab4eb723075ed7d605b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &4316570522089313947
 PrefabInstance:
   m_ObjectHideFlags: 0
