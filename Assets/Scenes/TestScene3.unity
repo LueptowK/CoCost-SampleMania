@@ -1059,7 +1059,6 @@ GameObject:
   - component: {fileID: 984958159}
   - component: {fileID: 984958158}
   - component: {fileID: 984958157}
-  - component: {fileID: 984958156}
   m_Layer: 0
   m_Name: NewPlayer
   m_TagString: Player
@@ -1067,18 +1066,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &984958156
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 984958155}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 521b611700410be45810047f0a74e899, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &984958157
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -12,6 +12,7 @@ public class PlayerMover : MonoBehaviour
 {
     bool paused;
     [SerializeField] private float speed;
+    public float Speed { get => speed; }
     [SerializeField] float repairRate;
     public float RepairRate { get => repairRate; }
     [SerializeField] float dashSpeedMultiplier;

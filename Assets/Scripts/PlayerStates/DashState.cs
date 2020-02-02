@@ -9,10 +9,6 @@ public class DashState : PlayerState
 {
     PlayerMover playerMover;
     Vector3 move;
-    bool jumping;
-    bool charging;
-    bool grounded;
-    bool dashing;
     float dashCost;
     float dashTime;
     Transform cam;
@@ -49,25 +45,19 @@ public class DashState : PlayerState
             move = (v * Vector3.forward + h * Vector3.right);
         }
 
-        move = Vector3.Lerp(currentDirection, move, 0.5f);
-
-
+        move = Vector3.Lerp(currentDirection, move, 0.3f);
         // pass all parameters to the character control script
-        playerMover.Move(move, false, false);
+        playerMover.Move(move.normalized * playerMover.DashSpeedMultiplier, false, false);
 
         if (dashTime >= playerMover.MaxDashTime)
         {
             return new DefaultState(playerMover);
         }
 
+        //currentDirection = playerMover.CharacterController.velocity;
         currentDirection = playerMover.CharacterController.velocity;
 
         return null;
-    }
-
-    public override void LateUpdate()
-    {
-        currentDirection = playerMover.CharacterController.velocity;
     }
 
     public override void Enter()
@@ -76,6 +66,7 @@ public class DashState : PlayerState
         //playerMover.CharacterController.MovingTurnSpeed = 360;
         playerMover.CharacterController.SpeedMultiplier = 1.5f;
         currentDirection = playerMover.CharacterController.velocity;
+        playerMover.Anim.Play("Dash", -1, 0.5f);
     }
 
     public override void Exit()
