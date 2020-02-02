@@ -61,6 +61,7 @@ public class RepairingState : PlayerState
             repairTarget.Repair(playerMover.RepairRate);
         }
         playerMover.Anim.Play("Repair", -1, 0f);
+        playerMover.transform.LookAt(target.transform);
         rotation = playerMover.transform.rotation;
     }
 
