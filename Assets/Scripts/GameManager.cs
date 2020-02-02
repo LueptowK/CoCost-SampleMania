@@ -36,6 +36,10 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetButtonDown("Quit"))
+        {
+            SceneManager.LoadScene(0);
+        }
         if (!gameStarted)
         {
             if (Input.anyKeyDown)
