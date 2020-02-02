@@ -115,5 +115,11 @@ public class PlayerMover : MonoBehaviour
     public void Die()
     {
         dead = true;
+        cam.gameObject.GetComponent<GameManager>().GameOver();
+    }
+
+    public void Win()
+    {
+        GetComponent<HealthController>().Win();
     }
 }

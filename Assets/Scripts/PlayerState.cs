@@ -66,7 +66,24 @@ public abstract class PlayerState
             LayerMask.GetMask("Enemy"));
         if (colliders.Length > 1)
         {
-            //find closest
+            Collider closest = null;
+            foreach(Collider collider in colliders)
+            {
+                if (!collider.gameObject.GetComponent<EnemyController>().Repaired)
+                {
+                    if (closest == null)
+                    {
+                        closest = collider;
+                    }
+                    else
+                    {
+                        if (Mathf.Abs((collider.transform.position - playerMover.transform.position).sqrMagnitude) < Mathf.Abs((closest.transform.position - playerMover.transform.position).sqrMagnitude))
+                        {
+                            closest = collider;
+                        }
+                    }
+                }
+            }
         }
         else if (colliders.Length == 1)
         {

@@ -6,7 +6,8 @@ public class Projectile : MonoBehaviour
 {
     Transform tf;
     Rigidbody rb;
-    [SerializeField] protected Transform target;
+    Transform target;
+    public Transform Target { set => target = value; }
 
     // Start is called before the first frame update
     void Awake()

@@ -50,7 +50,10 @@ public class DefaultState : PlayerState
 
         if (Input.GetButtonDown("Fire1"))
         {
-            return new RepairingState(playerMover);
+            if (GetRepairTarget() != null)
+            {
+                return new RepairingState(playerMover);
+            }
         }
 
         if (Input.GetButtonDown("Dash"))

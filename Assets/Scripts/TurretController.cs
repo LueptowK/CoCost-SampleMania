@@ -7,6 +7,7 @@ public class TurretController : EnemyController
     // Update is called once per frame
     protected override void Update()
     {
+        base.Update();
         fireTime -= Time.deltaTime;
         if (isRepaired == true)
         {
@@ -17,8 +18,6 @@ public class TurretController : EnemyController
                 Fire();
             }
         }
-
-        repairIndicator.transform.LookAt(cam);
     }
 
 }
